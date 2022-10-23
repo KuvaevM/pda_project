@@ -94,7 +94,6 @@ def emulate_automate(current_seq, automat) -> List[Step]:
     new_seq_steps = []
     for step in current_seq.current_steps:
         current_sym = step.current_str_sym
-        print(current_sym)
         current_stack_top = step.current_stack_sym
         current_state = step.current_state
         suitable_rules = []
