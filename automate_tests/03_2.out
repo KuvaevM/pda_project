@@ -1,0 +1,3 @@
+(q0, xhend_h, S) |- (q0, xhend_h, Empty)
+Automate successfully ended. Step sequence:
+(q0, xhend_h, S) |- (q0, hend_h, X) |- (q0, end_h, H) |- (q0, Empty, Empty)

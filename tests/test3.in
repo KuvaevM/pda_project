@@ -1,0 +1,5 @@
+start=[S]
+[S] = `x`[X] | EPS;
+[X] = `y`[Y] | `h`[H];
+[Y] = `end_y`;
+[H] = `end_h`;

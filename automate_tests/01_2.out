@@ -1,0 +1,3 @@
+(q0, pq, S) |- (q0, q, E)
+Automate successfully ended. Step sequence:
+(q0, pq, S) |- (q0, q, E) |- (q0, Empty, Empty)

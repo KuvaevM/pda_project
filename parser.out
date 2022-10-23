@@ -1,0 +1,238 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> grammars
+Rule 1     grammars -> START Rules
+Rule 2     Rules -> Bind
+Rule 3     Rules -> Rules Bind
+Rule 4     Bind -> NONTERMINAL EQ Enumeration SEP
+Rule 5     Enumeration -> Enumeration PIPE Sequence
+Rule 6     Enumeration -> Sequence
+Rule 7     Sequence -> Single
+Rule 8     Sequence -> Sequence Single
+Rule 9     Single -> EMPTY
+Rule 10    Single -> TERMINAL
+Rule 11    Single -> NONTERMINAL
+
+Terminals, with rules where they appear
+
+EMPTY                : 9
+EQ                   : 4
+NONTERMINAL          : 4 11
+PIPE                 : 5
+SEP                  : 4
+START                : 1
+TERMINAL             : 10
+error                : 
+
+Nonterminals, with rules where they appear
+
+Bind                 : 2 3
+Enumeration          : 4 5
+Rules                : 1 3
+Sequence             : 5 6 8
+Single               : 7 8
+grammars             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . grammars
+    (1) grammars -> . START Rules
+
+    START           shift and go to state 2
+
+    grammars                       shift and go to state 1
+
+state 1
+
+    (0) S' -> grammars .
+
+
+
+state 2
+
+    (1) grammars -> START . Rules
+    (2) Rules -> . Bind
+    (3) Rules -> . Rules Bind
+    (4) Bind -> . NONTERMINAL EQ Enumeration SEP
+
+    NONTERMINAL     shift and go to state 5
+
+    Rules                          shift and go to state 3
+    Bind                           shift and go to state 4
+
+state 3
+
+    (1) grammars -> START Rules .
+    (3) Rules -> Rules . Bind
+    (4) Bind -> . NONTERMINAL EQ Enumeration SEP
+
+    $end            reduce using rule 1 (grammars -> START Rules .)
+    NONTERMINAL     shift and go to state 5
+
+    Bind                           shift and go to state 6
+
+state 4
+
+    (2) Rules -> Bind .
+
+    NONTERMINAL     reduce using rule 2 (Rules -> Bind .)
+    $end            reduce using rule 2 (Rules -> Bind .)
+
+
+state 5
+
+    (4) Bind -> NONTERMINAL . EQ Enumeration SEP
+
+    EQ              shift and go to state 7
+
+
+state 6
+
+    (3) Rules -> Rules Bind .
+
+    NONTERMINAL     reduce using rule 3 (Rules -> Rules Bind .)
+    $end            reduce using rule 3 (Rules -> Rules Bind .)
+
+
+state 7
+
+    (4) Bind -> NONTERMINAL EQ . Enumeration SEP
+    (5) Enumeration -> . Enumeration PIPE Sequence
+    (6) Enumeration -> . Sequence
+    (7) Sequence -> . Single
+    (8) Sequence -> . Sequence Single
+    (9) Single -> . EMPTY
+    (10) Single -> . TERMINAL
+    (11) Single -> . NONTERMINAL
+
+    EMPTY           shift and go to state 12
+    TERMINAL        shift and go to state 13
+    NONTERMINAL     shift and go to state 8
+
+    Enumeration                    shift and go to state 9
+    Sequence                       shift and go to state 10
+    Single                         shift and go to state 11
+
+state 8
+
+    (11) Single -> NONTERMINAL .
+
+    EMPTY           reduce using rule 11 (Single -> NONTERMINAL .)
+    TERMINAL        reduce using rule 11 (Single -> NONTERMINAL .)
+    NONTERMINAL     reduce using rule 11 (Single -> NONTERMINAL .)
+    SEP             reduce using rule 11 (Single -> NONTERMINAL .)
+    PIPE            reduce using rule 11 (Single -> NONTERMINAL .)
+
+
+state 9
+
+    (4) Bind -> NONTERMINAL EQ Enumeration . SEP
+    (5) Enumeration -> Enumeration . PIPE Sequence
+
+    SEP             shift and go to state 14
+    PIPE            shift and go to state 15
+
+
+state 10
+
+    (6) Enumeration -> Sequence .
+    (8) Sequence -> Sequence . Single
+    (9) Single -> . EMPTY
+    (10) Single -> . TERMINAL
+    (11) Single -> . NONTERMINAL
+
+    SEP             reduce using rule 6 (Enumeration -> Sequence .)
+    PIPE            reduce using rule 6 (Enumeration -> Sequence .)
+    EMPTY           shift and go to state 12
+    TERMINAL        shift and go to state 13
+    NONTERMINAL     shift and go to state 8
+
+    Single                         shift and go to state 16
+
+state 11
+
+    (7) Sequence -> Single .
+
+    EMPTY           reduce using rule 7 (Sequence -> Single .)
+    TERMINAL        reduce using rule 7 (Sequence -> Single .)
+    NONTERMINAL     reduce using rule 7 (Sequence -> Single .)
+    SEP             reduce using rule 7 (Sequence -> Single .)
+    PIPE            reduce using rule 7 (Sequence -> Single .)
+
+
+state 12
+
+    (9) Single -> EMPTY .
+
+    EMPTY           reduce using rule 9 (Single -> EMPTY .)
+    TERMINAL        reduce using rule 9 (Single -> EMPTY .)
+    NONTERMINAL     reduce using rule 9 (Single -> EMPTY .)
+    SEP             reduce using rule 9 (Single -> EMPTY .)
+    PIPE            reduce using rule 9 (Single -> EMPTY .)
+
+
+state 13
+
+    (10) Single -> TERMINAL .
+
+    EMPTY           reduce using rule 10 (Single -> TERMINAL .)
+    TERMINAL        reduce using rule 10 (Single -> TERMINAL .)
+    NONTERMINAL     reduce using rule 10 (Single -> TERMINAL .)
+    SEP             reduce using rule 10 (Single -> TERMINAL .)
+    PIPE            reduce using rule 10 (Single -> TERMINAL .)
+
+
+state 14
+
+    (4) Bind -> NONTERMINAL EQ Enumeration SEP .
+
+    NONTERMINAL     reduce using rule 4 (Bind -> NONTERMINAL EQ Enumeration SEP .)
+    $end            reduce using rule 4 (Bind -> NONTERMINAL EQ Enumeration SEP .)
+
+
+state 15
+
+    (5) Enumeration -> Enumeration PIPE . Sequence
+    (7) Sequence -> . Single
+    (8) Sequence -> . Sequence Single
+    (9) Single -> . EMPTY
+    (10) Single -> . TERMINAL
+    (11) Single -> . NONTERMINAL
+
+    EMPTY           shift and go to state 12
+    TERMINAL        shift and go to state 13
+    NONTERMINAL     shift and go to state 8
+
+    Sequence                       shift and go to state 17
+    Single                         shift and go to state 11
+
+state 16
+
+    (8) Sequence -> Sequence Single .
+
+    EMPTY           reduce using rule 8 (Sequence -> Sequence Single .)
+    TERMINAL        reduce using rule 8 (Sequence -> Sequence Single .)
+    NONTERMINAL     reduce using rule 8 (Sequence -> Sequence Single .)
+    SEP             reduce using rule 8 (Sequence -> Sequence Single .)
+    PIPE            reduce using rule 8 (Sequence -> Sequence Single .)
+
+
+state 17
+
+    (5) Enumeration -> Enumeration PIPE Sequence .
+    (8) Sequence -> Sequence . Single
+    (9) Single -> . EMPTY
+    (10) Single -> . TERMINAL
+    (11) Single -> . NONTERMINAL
+
+    SEP             reduce using rule 5 (Enumeration -> Enumeration PIPE Sequence .)
+    PIPE            reduce using rule 5 (Enumeration -> Enumeration PIPE Sequence .)
+    EMPTY           shift and go to state 12
+    TERMINAL        shift and go to state 13
+    NONTERMINAL     shift and go to state 8
+
+    Single                         shift and go to state 16

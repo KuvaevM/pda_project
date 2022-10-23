@@ -1,0 +1,40 @@
+States: q0 
+Input alphabet: (, )
+Stack alphabet: R, L, S
+Start state: q0
+Start stack element: S
+Rules: {
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(()
+			Stack symbol: NonTerminal(S)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(NonTerminal(S), NonTerminal(R), NonTerminal(S))
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(()
+			Stack symbol: NonTerminal(S)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(NonTerminal(R), NonTerminal(L))
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal())
+			Stack symbol: NonTerminal(R)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(Empty)
+		}
+	}
+}

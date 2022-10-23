@@ -1,0 +1,6 @@
+(q0, xyend_h, S) |- (q0, xyend_h, Empty)
+(q0, xyend_h, S) |- (q0, yend_h, X)
+(q0, xyend_h, S) |- (q0, yend_h, X) |- (q0, end_h, Y)
+String is not accepted by automat. All sequences:
+(q0, xyend_h, S) |- (q0, xyend_h, Empty)
+(q0, xyend_h, S) |- (q0, yend_h, X) |- (q0, end_h, Y)

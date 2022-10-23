@@ -1,0 +1,6 @@
+(q0, (), S) |- (q0, ), S)
+(q0, (), S) |- (q0, ), R)
+(q0, (), S) |- (q0, ), R) |- (q0, Empty, L)
+String is not accepted by automat. All sequences:
+(q0, (), S) |- (q0, ), S)
+(q0, (), S) |- (q0, ), R) |- (q0, Empty, L)

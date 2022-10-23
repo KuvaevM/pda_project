@@ -1,0 +1,5 @@
+(q0, xyend_y, S) |- (q0, xyend_y, Empty)
+(q0, xyend_y, S) |- (q0, yend_y, X)
+(q0, xyend_y, S) |- (q0, yend_y, X) |- (q0, end_y, Y)
+Automate successfully ended. Step sequence:
+(q0, xyend_y, S) |- (q0, yend_y, X) |- (q0, end_y, Y) |- (q0, Empty, Empty)

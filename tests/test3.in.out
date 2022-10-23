@@ -1,0 +1,73 @@
+States: q0 
+Input alphabet: x, y, end_y, h, end_h
+Stack alphabet: H, Y, X, S
+Start state: q0
+Start stack element: S
+Rules: {
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(x)
+			Stack symbol: NonTerminal(S)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(NonTerminal(X))
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Empty
+			Stack symbol: NonTerminal(S)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(Empty)
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(y)
+			Stack symbol: NonTerminal(X)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(NonTerminal(Y))
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(h)
+			Stack symbol: NonTerminal(X)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(NonTerminal(H))
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(end_y)
+			Stack symbol: NonTerminal(Y)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(Empty)
+		}
+	}
+	Rule: {
+		Left: {
+			State: q0
+			Input symbol: Terminal(end_h)
+			Stack symbol: NonTerminal(H)
+		}
+		Right: {
+			State: q0
+			Stack sequence: Sequence(Empty)
+		}
+	}
+}

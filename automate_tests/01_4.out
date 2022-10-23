@@ -1,0 +1,4 @@
+(q0, plltyur, S) |- (q0, lltyur, E)
+(q0, plltyur, S) |- (q0, lltyur, E) |- (q0, ltyur, E) |- (q0, tyur, E)
+String is not accepted by automat. All sequences:
+(q0, plltyur, S) |- (q0, lltyur, E) |- (q0, ltyur, E) |- (q0, tyur, E)
